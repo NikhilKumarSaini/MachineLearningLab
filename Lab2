@@ -1,2 +1,99 @@
 import pandas as ps
 from matplotlib import pyplot as pylot
+
+import pandas as ps
+from matplotlib import pyplot as pylot
+df = ps.read_csv("canada_per_capita_income.csv")
+x = df.year
+y = df.per_capita_income
+pylot.title("canada Per Capita Income")
+pylot.xlabel("Year")
+pylot.ylabel("per_capita_income.csv")
+pylot.scatter(x,y)
+pylot.plot(x,y)
+x =  [1, 2, 3, 4, 5]
+y1 = [2, 3, 5, 7, 11]
+y2 = [1, 4, 9, 16, 25]
+y3 = [3, 6, 9, 12, 15]
+
+pylot.plot(x,y1,color='red',label='line1')
+pylot.plot(x,y2,color='blue',label='line2')
+pylot.plot(x,y3,color='green',label="line3")
+pylot.legend()
+pylot.show()    
+import numpy as np
+
+x = np.random.randint(low=1,high=20,size=10)
+y = np.random.randint(low=1,high=20,size=10)
+
+pylot.scatter(x,y,marker="+")
+df = ps.read_csv("cereal.csv")
+
+pylot.hist(df.calories)
+df = ps.read_csv("cereal.csv")
+
+df = df.head(5)
+pylot.figure(figsize=(8, 5))
+pylot.bar(df.name,df.calories)
+categories = ['Housing', 'Transportation', 'Food', 'Utilities', 'Entertainment', 'Healthcare']
+expenses = [1500, 600, 800, 300, 400, 200]
+
+pylot.figure(figsize=(8,5))
+pylot.title("Expense")
+print(pylot.pie(expenses, labels=categories))
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate random data
+np.random.seed(0)
+x = np.random.randn(100)
+y = np.random.randn(100)
+
+# Create subplots
+fig, axs = plt.subplots(2, 2, figsize=(10, 8))
+
+# Scatter plot on the first subplot
+axs[0, 0].scatter(x, y, color='blue', alpha=0.5)
+axs[0, 0].set_title('Scatter Plot')
+axs[0, 0].set_xlabel('X')
+axs[0, 0].set_ylabel('Y')
+
+# Plot a histogram on the second subplot
+axs[0, 1].hist(x, bins=20, color='green', alpha=0.7)
+axs[0, 1].set_title('Histogram')
+axs[0, 1].set_xlabel('Value')
+axs[0, 1].set_ylabel('Frequency')
+
+# Plot a bar chart on the third subplot
+categories = ['A', 'B', 'C', 'D']
+values = [15, 30, 20, 35]
+axs[1, 0].bar(categories, values, color='orange', alpha=0.7)
+axs[1, 0].set_title('Bar Chart')
+axs[1, 0].set_xlabel('Category')
+axs[1, 0].set_ylabel('Value')
+
+# Plot a line chart on the fourth subplot
+x_line = np.linspace(0, 10, 100)
+y_line = np.sin(x_line)
+axs[1, 1].plot(x_line, y_line, color='red', alpha=0.7)
+axs[1, 1].set_title('Line Plot')
+axs[1, 1].set_xlabel('X')
+axs[1, 1].set_ylabel('Y')
+
+# Adjust layout
+plt.tight_layout()
+
+# Show plot
+plt.show()
+
+x_positions = [1, 2, 3, 4, 5]
+y_positions = [5, 4, 3, 2, 1]
+quantities = [10, 20, 30, 40, 50]
+
+pylot.figure(figsize=(8, 6))
+pylot.scatter(x_positions, y_positions, s=quantities, alpha=0.5,marker="+",c='red')
+
+pylot.title('Quantities with X and Y Positions')
+pylot.xlabel('X Position')
+pylot.ylabel('Y Position')
+
